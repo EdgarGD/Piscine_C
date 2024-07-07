@@ -16,6 +16,7 @@ int main(void) {
     clear();
     ft_draw(ballx, bally, pad1y, pad2y, p1_count, p2_count);
     pad_move(&pad1y, &pad2y);
+    ft_ball(&ballx, &bally);
     flushinp();
     usleep(50000);
     refresh();
