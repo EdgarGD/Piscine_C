@@ -3,13 +3,13 @@
 void ft_draw(short int ballx, short int bally, short int paddle1y,
              short int paddle2y, short int player1_count,
              short int player2_count) {
-  // start_color();
-  // init_pair(1, COL, COLOR_BLUE);
-  // attron(COLOR_PAIR(1));
+  start_color();
+  init_pair(1, COLOR_CYAN, COLOR_BLACK);
+  attron(COLOR_PAIR(1));
   for (int y = 0; y < HEIGHT; y++) {
     for (int x = 0; x < WIDTH; x++) {
       if (x == 0 && y == 0)
-        printw("score: %d / %d", player1_count, player2_count);
+        printw("score: %d || %d", player1_count, player2_count);
       else if (y == 1 || y == HEIGHT - 1)
         printw("#");
       else if ((x == 0 || x == WIDTH - 1) && y != 0)

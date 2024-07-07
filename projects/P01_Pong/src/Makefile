@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS = -lncurses -Wall -Wextra -Werror
+FLAGS = -lncurses 
 BUILD = ../build/$(TARGET)
 TARGET = pong
 CLANG = clang-format -i *.c *.h
