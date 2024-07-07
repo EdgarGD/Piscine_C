@@ -3,6 +3,7 @@
 
 #define _XOPEN_SOURCE 600
 #define _POSIX_C_SOURCE 200112L
+#define MAX_LEN 128
 
 #include <ncurses.h>
 #include <stdio.h>
@@ -20,5 +21,5 @@ void pad_move(short int *pad1y, short int *pad2y);
 void ft_draw(short int ballx, short int bally, short int paddle1y,
              short int paddle2y, short int player1_count,
              short int player2_count);
-
+void print_image(FILE *fptr);
 #endif

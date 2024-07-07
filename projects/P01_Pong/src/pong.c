@@ -6,6 +6,7 @@ int main(void) {
   nodelay(stdscr, 1);
   noecho();
   curs_set(0);
+
   short int ballx = WIDTH / 2;
   short int bally = HEIGHT / 2;
   short int pad1y = HEIGHT / 2;
@@ -14,8 +15,11 @@ int main(void) {
   short int p2_count = 0;
   short int y_counter = 0;
   short int x_counter = 0;
+  char *filename = "player1.txt";
+  char *filename2 = "player2.txt";
+  FILE *fptr = NULL;
 
-  while (1) {
+  while (p1_count < 1) {
     clear();
     ft_ball(&bally, &ballx, &y_counter, &x_counter, pad1y, pad2y, &p1_count,
             &p2_count);
@@ -26,5 +30,15 @@ int main(void) {
     refresh();
   }
   endwin();
+
+  if ((fptr = fopen(filename, "r")) == NULL) {
+    fprintf(stderr, "error opening %s\n", filename);
+    return 1;
+  }
+
+  print_image(fptr);
+
+  fclose(fptr);
+  usleep(100000);
   return 0;
 }
