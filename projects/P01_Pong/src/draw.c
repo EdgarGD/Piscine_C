@@ -24,6 +24,5 @@ void ft_draw(short int ballx, short int bally, short int paddle1y,
     }
     printw("\n");
   }
-  usleep(100000);
   // system("clear");
 }
