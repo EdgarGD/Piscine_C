@@ -19,7 +19,7 @@ int main(void) {
   char *filename2 = "player2.txt";
   FILE *fptr = NULL;
 
-  while (p1_count < 1) {
+  while (p2_count < 10 || p1_count < 10) {
     clear();
     ft_ball(&bally, &ballx, &y_counter, &x_counter, pad1y, pad2y, &p1_count,
             &p2_count);
@@ -31,14 +31,22 @@ int main(void) {
   }
   endwin();
 
-  if ((fptr = fopen(filename, "r")) == NULL) {
-    fprintf(stderr, "error opening %s\n", filename);
-    return 1;
+  if (p1_count == 10) {
+    if ((fptr = fopen(filename, "r")) == NULL) {
+      fprintf(stderr, "error opening %s\n", filename);
+      return 1;
+    }
+    print_image(fptr);
   }
 
-  print_image(fptr);
+  if (p2_count == 10) {
+    if ((fptr = fopen(filename2, "r")) == NULL) {
+      fprintf(stderr, "error opening %s\n", filename);
+      return 1;
+    }
+    print_image(fptr);
+  }
 
   fclose(fptr);
-  usleep(100000);
   return 0;
 }
