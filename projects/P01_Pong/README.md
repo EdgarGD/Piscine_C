@@ -6,5 +6,5 @@ To build and launch Pong you need to download the repository and build the proje
 ```make```
 
 After that the game will start.
-Press the z and x buttons to control the left paddle, and the m and n buttons to control the right paddle.
+Press the ```z``` and ```x``` buttons to control the left paddle, and the ```m``` and ```n``` buttons to control the right paddle.
 The game will be finished if one of the two players scores 10 points.
