@@ -6,5 +6,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <ncurses.h>
+#include <string.h>
+
+struct Stack
+{
+    int top;
+    unsigned capacity;
+    int *array;
+};
 
 #endif
